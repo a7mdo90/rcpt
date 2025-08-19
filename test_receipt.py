@@ -5,6 +5,7 @@ import os
 import img2pdf
 from PIL import Image
 import glob
+from datetime import datetime, timedelta
 
 def compress_image(image_path, quality=85):
     """Compress the image to reduce file size"""
@@ -50,8 +51,21 @@ def main():
         # Create a copy of the base receipt
         receipt_data = base_receipt.copy()
         
-        # Modify receipt number
-        receipt_data['receipt_no'] = f"{i:06d}"
+        # Generate random date within last 30 days
+        today = datetime.now()
+        random_days = random.randint(0, 29)
+        random_date = today - timedelta(days=random_days)
+        receipt_data['date'] = random_date.strftime("%Y-%m-%d")
+        
+        # Generate random time between 8 AM and 7 PM
+        hour = random.randint(8, 19)
+        minute = random.randint(0, 59)
+        ampm = "PM" if hour >= 12 else "AM"
+        display_hour = hour if hour <= 12 else hour - 12
+        receipt_data['time'] = f"{display_hour:02d}:{minute:02d} {ampm}"
+        
+        # Generate random receipt number between 000001 and 000099
+        receipt_data['receipt_no'] = f"{random.randint(1, 99):06d}"
         
         # Select random number of items (3-7 items)
         num_items = random.randint(3, 7)
