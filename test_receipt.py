@@ -67,30 +67,6 @@ def main():
         # Generate random receipt number between 000001 and 000099
         receipt_data['receipt_no'] = f"{random.randint(1, 99):06d}"
         
-        # Select random number of items (3-7 items)
-        num_items = random.randint(3, 7)
-        all_items = [
-            {"name_ar": "باكيت اقلام رصاص مثلث", "price": 0.550},
-            {"name_ar": "صمغ يوهو بورسلان", "price": 0.950},
-            {"name_ar": "دفتر اي اند تي حلزوني حجم اي فور عدد ١٢٠ ورقه الوان بناتي متنوعة", "price": 1.550},
-            {"name_ar": "اقلام فسفورية ستابيلو ٦ الوان مقاومة للجفاف", "price": 3.000},
-            {"name_ar": "الوان تضليل هايلايتر كلاس راس مشطوف ٤ لون", "price": 1.000},
-            {"name_ar": "الوان ضعيفة ستابيلو مجموعة ٦ لون", "price": 1.450},
-            {"name_ar": "باكيت الوان باستيل فسفوري ٣ لون", "price": 1.650},
-            {"name_ar": "قلم حبر زيبرا ز-١ حجم ٠.٧", "price": 0.250},
-            {"name_ar": "مجموعة اقلام حبر زيبرا ساراسا ٥ الوان مقاس ٠.٧", "price": 1.950},
-            {"name_ar": "دفتر اي اند تي حلزوني ٨*١٠ عدد ٦٠ ورقه الوان وبناتي متنوعة", "price": 0.850}
-        ]
-        
-        # Randomly select items
-        selected_items = random.sample(all_items, num_items)
-        receipt_data['items'] = selected_items
-        receipt_data['item_count'] = len(selected_items)
-        
-        # Calculate new total
-        total = sum(item['price'] for item in selected_items)
-        receipt_data['total'] = round(total, 3)
-        
         # Create a random selection of 3-7 items
         num_items = random.randint(3, 7)
         selected_items = []
