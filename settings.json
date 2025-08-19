@@ -1,0 +1,21 @@
+{
+    "auto_mode": true,
+    "auto_cleanup": true,
+    "num_receipts": 30,
+    "output_dir": "generated_receipts",
+    "pdf_name": "all_receipts.pdf",
+    "logo_path": "مكتبة أطلس دليلك الى النجاح.png",
+    "git": {
+        "auto_push": true,
+        "repo_url": "https://github.com/a7mdo90/rcpt.git",
+        "branch": "master"
+    },
+    "receipt_settings": {
+        "min_items": 3,
+        "max_items": 7,
+        "business_hours": {
+            "start": 8,
+            "end": 19
+        }
+    }
+}

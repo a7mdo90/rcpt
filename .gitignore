@@ -23,8 +23,10 @@ wheels/
 .venv/
 
 # Generated files
-generated_receipts/
+generated_receipts/*
+!generated_receipts/.gitkeep
 *.png
+!مكتبة أطلس دليلك الى النجاح.png
 *.pdf
 
 # VS Code
